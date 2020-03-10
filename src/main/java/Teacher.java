@@ -54,6 +54,11 @@ public class Teacher {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "Teacher{" + "fName=" + fName + ", lName=" + lName + ", email=" + email + '}';
+    }
     
     
 }

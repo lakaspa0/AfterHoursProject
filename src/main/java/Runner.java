@@ -18,12 +18,8 @@ public class Runner {
         //importing teacher files
         Scanner inFile = new Scanner(new FileReader("studentList.csv"));
         Scanner inFile2 = new Scanner(new FileReader("teacherList.csv"));
-        inFile.useDelimiter(",");
-        inFile2.useDelimiter(",");
-        
-        //test arraylist
-        System.out.println(inFile.next());
-        System.out.println(inFile2.next());
+        inFile.useDelimiter(",|\\n");
+        inFile2.useDelimiter(",|\\n");
         
         //creating teacher arraylist
         ArrayList<Teacher> teachList = new ArrayList<Teacher>();
@@ -35,10 +31,22 @@ public class Runner {
             teachList.add(tempTeacher);
         }
         
-        //test arraylist
-        for(Teacher t: teachList){
-            System.out.println(t.getEmail());
+        //creating student arraylist
+        ArrayList<Student> stuList = new ArrayList<Student>();
+        while(inFile.hasNext()){
+            String tempSFirst = inFile.next();
+            String tempSLast = inFile.next();
+            String tempGrade = inFile.next();
+            String tempSEmail = inFile.next();
+            Student tempStudent = new Student(tempSFirst, tempSLast, tempGrade, tempSEmail);
+            stuList.add(tempStudent);
         }
+        
+        
+        //test arraylist
+        /*for(Teacher t: teachList){
+            System.out.println(t.getEmail());
+        }*/
         
         
         //beginning of logging in

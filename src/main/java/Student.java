@@ -14,6 +14,7 @@ import java.util.*;
 public class Student {
     private String fName;
     private String lName;
+    private String grade;
     private String email;
     ArrayList<Student> stuList = new ArrayList<Student>();
     
@@ -24,7 +25,7 @@ public class Student {
         stuList.add(this);
     }
     
-    public Student(String fName, String lName, String email){
+    public Student(String fName, String lName, String grade, String email){
         this.fName = fName;
         this.lName = lName;
         this.email = email;
